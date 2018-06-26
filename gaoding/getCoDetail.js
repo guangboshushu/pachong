@@ -7,6 +7,7 @@ const querystring = require('querystring')
 const getCoDetail = () => {
   selectMysql('source, nameCN', 'company_lib', 'address is  NULL  order by id desc limit 1', res => {
     let source = res[0]['source']
+    console.log(source+' : ', res[0]['nameCN'])
     let id = source.replace('http://i.cantonfair.org.cn/cn/Company/Index?', '')
 
     id = querystring.parse(id)['corpid']
