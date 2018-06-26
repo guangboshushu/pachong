@@ -19,6 +19,8 @@ const getCompanyDetail = (id, callback) => {
     },
     body: post_data
   }, (error, response, body) => {
+    console.log('body', body)
+    console.log('error', error)
     if (!error && response.statusCode == 200) {
       callback(body)
     } else {
